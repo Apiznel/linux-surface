@@ -4,7 +4,7 @@
 
 pkgbase=linux-surface
 pkgver=6.19.8.arch1
-pkgrel=2
+pkgrel=3
 pkgdesc='Linux'
 _shortver=${pkgver%.*}
 _fullver=${pkgver%.*}-${pkgver##*.}
@@ -58,6 +58,14 @@ source=(
   0014-amd-gpio.patch
   0015-rtc.patch
   0016-hid-surface.patch
+  0017-dirtyfrag-xfrm-esp-avoid-in-place-decrypt-on-shared-skb-frags.patch
+  0018-dirtyfrag-rxrpc-Fix-potential-UAF-after-skb_unshare-failure.patch
+  0019-dirtyfrag-rxrpc-Fix-rxrpc_input_call_event-to-only-unshare-DAT.patch
+  0020-dirtyfrag-rxrpc-Fix-use-of-wrong-skb-when-comparing-queued-RES.patch
+  0021-dirtyfrag-rxrpc-only-handle-RESPONSE-during-service-challenge.patch
+  0022-dirtyfrag-rxrpc-Fix-conn-level-packet-handling-to-unshare-RESP.patch
+  0023-dirtyfrag-rxrpc-Fix-re-decryption-of-RESPONSE-packets.patch
+  0024-dirtyfrag-rxrpc-Also-unshare-DATA-RESPONSE-packets-when-paged-.patch
 )
 validpgpkeys=(
   'ABAF11C65A2970B130ABE3C479BE3E4300411886'  # Linus Torvalds
@@ -66,7 +74,7 @@ validpgpkeys=(
 )
 sha256sums=('4d1e35866e69aaef26812c1cc5651936faa5e360b5ef6a19c28fb19b6848ab4b'
             'd0ce1ee11ca0bc6a817c3c17a2651076409bd9fd6c0ab9e744aae2131ab654ce'
-            '645003a31150560e2cd367a25c66b9957a7fefed37053c9f89960a487af86af8'
+            '3732912dbdf6419df696eec4c40d8edfad90a529e9cfe09b365c2b558690f9b7'
             '008e37de7e6cf8b9479ef0f0f425a25092646e85d741aedd056e5ff3e1096361'
             '5113eaf632692852082972ff881321428b060efd4ff0177c2ce3c72c64ad76e7'
             'dbad1231a9a0a2bcf4f6567149e5b86f82f4bb29a3b3fa91543b1996e66353f4'
@@ -83,7 +91,15 @@ sha256sums=('4d1e35866e69aaef26812c1cc5651936faa5e360b5ef6a19c28fb19b6848ab4b'
             'dbaddf5ed1ec7aec515867facd17a09e083289eb4185b3af4f3bc1d6c9bd1ad7'
             '1d703ad95120df846d77b0c5338af1829119e2bfcac258ebedf0145ba02e22f3'
             '76b91256a525c4f626802b5ad29ddb1a9477bc90001c9ea8c469ae77d07593fc'
-            '32b91e80ddc124dc7f31bbde65fcb18fa7a7f194f953ccfc8f14d630aac4ddc4')
+            '32b91e80ddc124dc7f31bbde65fcb18fa7a7f194f953ccfc8f14d630aac4ddc4'
+            'fac88ee98cfdfe25e408410e32182d1333ad70daf0d7393616062bc742ab16a9'
+            '49720fcc7dc3985a23f28690bf8617782e73c164f5b1faa5baad64d2914470cc'
+            '07daf409a43ae3eea6d3a7f0faa27de273dd1036220ebaf06327423508d154b8'
+            '293baa7fa7ea5a6c0eca70865242478640b02e45b336e541e7c2aca502d20ae8'
+            '780f99c5da46b2afacca860aa711342c654d66dbf8aa9a78575ec9061f5591e4'
+            'b8de9f82cf402f52c65a777b3944a153a47310a13ec8629a3b9f907d792bfbe6'
+            '0b7785bfb9b00326f5575e85f869c19e40a4d829267c7aded75df6bd532b622d'
+            '4fee526034c01a578577ea85a569ace805fbaf66e68d6bf4cab030aabc007d51')
 
 
 export KBUILD_BUILD_HOST=archlinux
