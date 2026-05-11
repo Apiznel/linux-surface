@@ -1086,7 +1086,7 @@ Patchset: cameras
 diff --git a/drivers/media/i2c/dw9719.c b/drivers/media/i2c/dw9719.c
 --- a/drivers/media/i2c/dw9719.c
 +++ b/drivers/media/i2c/dw9719.c
-@@ -451,6 +451,15 @@ static const struct of_device_id dw9719_of_table[] = {
+@@ -454,6 +454,15 @@ static const struct of_device_id dw9719_of_table[] = {
  };
  MODULE_DEVICE_TABLE(of, dw9719_of_table);
 
@@ -1102,7 +1102,7 @@ diff --git a/drivers/media/i2c/dw9719.c b/drivers/media/i2c/dw9719.c
  static DEFINE_RUNTIME_DEV_PM_OPS(dw9719_pm_ops, dw9719_suspend, dw9719_resume,
  				 NULL);
 
-@@ -463,4 +472,5 @@ static struct i2c_driver dw9719_i2c_driver = {
+@@ -466,4 +475,5 @@ static struct i2c_driver dw9719_i2c_driver = {
  	.probe = dw9719_probe,
  	.remove = dw9719_remove,
 +	.id_table = dw9719_id_table,
