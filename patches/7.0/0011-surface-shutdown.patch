@@ -1,4 +1,4 @@
-From eba6888821976d1aab8619e56c9acd741b28f12f Mon Sep 17 00:00:00 2001
+From c9b0a9815804e817636ac2835c57fe0cddb67409 Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sun, 19 Feb 2023 22:12:24 +0100
 Subject: [PATCH] PCI: Add quirk to prevent calling shutdown method
@@ -23,10 +23,10 @@ Patchset: surface-shutdown
  3 files changed, 40 insertions(+)
 
 diff --git a/drivers/pci/pci-driver.c b/drivers/pci/pci-driver.c
-index dd9075403987..a5f7ba9d2a75 100644
+index e3f59001785a..acd35ed4b94a 100644
 --- a/drivers/pci/pci-driver.c
 +++ b/drivers/pci/pci-driver.c
-@@ -534,6 +534,9 @@ static void pci_device_shutdown(struct device *dev)
+@@ -543,6 +543,9 @@ static void pci_device_shutdown(struct device *dev)
  	struct pci_dev *pci_dev = to_pci_dev(dev);
  	struct pci_driver *drv = pci_dev->driver;
  
@@ -81,7 +81,7 @@ index 48946cca4be7..b547d68102ed 100644
 +DECLARE_PCI_FIXUP_FINAL(PCI_VENDOR_ID_INTEL, 0x466d, quirk_no_shutdown);  // Thunderbolt 4 NHI
 +DECLARE_PCI_FIXUP_FINAL(PCI_VENDOR_ID_INTEL, 0x46a8, quirk_no_shutdown);  // GPU
 diff --git a/include/linux/pci.h b/include/linux/pci.h
-index 1c270f1d5123..431c1246130d 100644
+index 57e9463e4347..e74fcf0a0cf6 100644
 --- a/include/linux/pci.h
 +++ b/include/linux/pci.h
 @@ -501,6 +501,7 @@ struct pci_dev {
@@ -95,7 +95,7 @@ index 1c270f1d5123..431c1246130d 100644
 -- 
 2.54.0
 
-From 864605a6568c887c986be196298c5a246c87b5cf Mon Sep 17 00:00:00 2001
+From b0364e89680dfe46d33abe5a796ac583a6ee1184 Mon Sep 17 00:00:00 2001
 From: LegendaryFire <tristan.balon@outlook.com>
 Date: Wed, 7 Jan 2026 01:06:25 +0100
 Subject: [PATCH] PCI: Add Surface Laptop Studio 2 devices to shutdown ops

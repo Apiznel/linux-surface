@@ -1,4 +1,4 @@
-From df05fb5d22c4c7d32030cc95ba054808f26ff7c4 Mon Sep 17 00:00:00 2001
+From 845bc5bfb75116b1573d3dc9084f72a4d203ba3c Mon Sep 17 00:00:00 2001
 From: Hans de Goede <hdegoede@redhat.com>
 Date: Sun, 10 Oct 2021 20:56:57 +0200
 Subject: [PATCH] ACPI: delay enumeration of devices with a _DEP pointing to an
@@ -58,7 +58,7 @@ Patchset: cameras
  1 file changed, 3 insertions(+)
 
 diff --git a/drivers/acpi/scan.c b/drivers/acpi/scan.c
-index e8cdbdb46fdb..66978eaa979d 100644
+index 530547cda8b2..0656e1da5b43 100644
 --- a/drivers/acpi/scan.c
 +++ b/drivers/acpi/scan.c
 @@ -2244,6 +2244,9 @@ static const char * const acpi_system_dev_ids[] = {
@@ -74,7 +74,7 @@ index e8cdbdb46fdb..66978eaa979d 100644
 -- 
 2.54.0
 
-From 4f1bc9f672e8f9a1c07af588bc24fd0dea803271 Mon Sep 17 00:00:00 2001
+From a203f43170f3785f9be56625b8725b6bc92243a9 Mon Sep 17 00:00:00 2001
 From: zouxiaoh <xiaohong.zou@intel.com>
 Date: Fri, 25 Jun 2021 08:52:59 +0800
 Subject: [PATCH] iommu: intel-ipu: use IOMMU passthrough mode for Intel IPUs
@@ -100,7 +100,7 @@ Patchset: cameras
  1 file changed, 30 insertions(+)
 
 diff --git a/drivers/iommu/intel/iommu.c b/drivers/iommu/intel/iommu.c
-index 67c6ad5f1c72..49d9976f23f0 100644
+index eb49cf988ccc..de9551860d13 100644
 --- a/drivers/iommu/intel/iommu.c
 +++ b/drivers/iommu/intel/iommu.c
 @@ -44,6 +44,13 @@
@@ -152,7 +152,7 @@ index 67c6ad5f1c72..49d9976f23f0 100644
  	if (!dmar_map_ipts)
  		iommu_identity_mapping |= IDENTMAP_IPTS;
  
-@@ -3946,6 +3961,18 @@ static void quirk_iommu_igfx(struct pci_dev *dev)
+@@ -3947,6 +3962,18 @@ static void quirk_iommu_igfx(struct pci_dev *dev)
  	disable_igfx_iommu = 1;
  }
  
@@ -171,7 +171,7 @@ index 67c6ad5f1c72..49d9976f23f0 100644
  static void quirk_iommu_ipts(struct pci_dev *dev)
  {
  	if (!IS_IPTS(dev))
-@@ -3996,6 +4023,9 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x1632, quirk_iommu_igfx);
+@@ -4000,6 +4027,9 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x1632, quirk_iommu_igfx);
  DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x163A, quirk_iommu_igfx);
  DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x163D, quirk_iommu_igfx);
  
@@ -184,7 +184,7 @@ index 67c6ad5f1c72..49d9976f23f0 100644
 -- 
 2.54.0
 
-From b6c92e71213c6184482c31b29afb91f02c9d79a7 Mon Sep 17 00:00:00 2001
+From d41206cfe411a184565dd456c34f70bb5c6c63ae Mon Sep 17 00:00:00 2001
 From: Daniel Scally <djrscally@gmail.com>
 Date: Sun, 10 Oct 2021 20:57:02 +0200
 Subject: [PATCH] platform/x86: int3472: Enable I2c daisy chain
@@ -221,7 +221,7 @@ index a496075c0d2a..fded1fc63fd8 100644
 -- 
 2.54.0
 
-From c9674629e575dfdc45e2cd6fcae83a4443839f15 Mon Sep 17 00:00:00 2001
+From cb0639b9bff44642b0b4120946fbc1bfac9f2e59 Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Tue, 21 Mar 2023 13:45:26 +0000
 Subject: [PATCH] media: i2c: Clarify that gain is Analogue gain in OV7251
@@ -260,7 +260,7 @@ index 27afc3fc0175..28b192c9a5ec 100644
 -- 
 2.54.0
 
-From 61f08f243fcd298024b45b313289d89c2a357b5e Mon Sep 17 00:00:00 2001
+From 18959ed866e25fe5c4802ab58a446257bacf172e Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Wed, 22 Mar 2023 11:01:42 +0000
 Subject: [PATCH] media: v4l2-core: Acquire privacy led in
@@ -311,7 +311,7 @@ index 03daa8c4ff7a..a84615b12a35 100644
 -- 
 2.54.0
 
-From f93e3f8e447df6d37bb7843fa36776849af41fb2 Mon Sep 17 00:00:00 2001
+From e33e661535b5bc32a0d42cfa2751dc69eb2db0cc Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:16 +0800
 Subject: [PATCH] platform: x86: int3472: Add MFD cell for tps68470 LED
@@ -352,7 +352,7 @@ index fded1fc63fd8..f9849e83ada2 100644
 -- 
 2.54.0
 
-From b91f82355c68da743b681cdad8de90cbd30cedc5 Mon Sep 17 00:00:00 2001
+From 04c32e96cc9d1f9789d18bc392ecbf2a3d9e3d18 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:17 +0800
 Subject: [PATCH] include: mfd: tps68470: Add masks for LEDA and LEDB
@@ -393,7 +393,7 @@ index 7807fa329db0..2d2abb25b944 100644
 -- 
 2.54.0
 
-From 96a0c0e572f8647d91553d160ba98b61157696a4 Mon Sep 17 00:00:00 2001
+From 2b55e7b7eab270135fb4ce5c10464eea75153560 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:18 +0800
 Subject: [PATCH] leds: tps68470: Add LED control for tps68470
@@ -644,7 +644,7 @@ index 000000000000..35aeb5db89c8
 -- 
 2.54.0
 
-From 931679a64674d35016b7f13f9d082e77b388293c Mon Sep 17 00:00:00 2001
+From b5c48a60416790a36bca361391033a99e84e209f Mon Sep 17 00:00:00 2001
 From: mojyack <mojyack@gmail.com>
 Date: Tue, 26 Mar 2024 05:55:44 +0900
 Subject: [PATCH] media: i2c: dw9719: fix probe error on surface go 2
@@ -676,7 +676,7 @@ index 59558335989e..b89765521af5 100644
 -- 
 2.54.0
 
-From 4d213baff75d1d35942831f38a5910937eb45248 Mon Sep 17 00:00:00 2001
+From 158b45ace989e99e2d43bb68e245dcdae765e273 Mon Sep 17 00:00:00 2001
 From: Tooraj Taraz <tooraj.taraz@yahoo.com>
 Date: Wed, 31 Dec 2025 00:35:50 +0100
 Subject: [PATCH] Add camera support for Surface Pro 9
@@ -952,7 +952,7 @@ index 4cc796bbee92..02236f3db19d 100644
  };
  MODULE_DEVICE_TABLE(acpi, ov5693_acpi_match);
 diff --git a/drivers/media/pci/intel/ipu-bridge.c b/drivers/media/pci/intel/ipu-bridge.c
-index 32cc95a766b7..15ed53c1e3fc 100644
+index 3028293eeb75..9f3ac51bfc67 100644
 --- a/drivers/media/pci/intel/ipu-bridge.c
 +++ b/drivers/media/pci/intel/ipu-bridge.c
 @@ -61,6 +61,10 @@ static const struct ipu_sensor_config ipu_supported_sensors[] = {
@@ -1017,7 +1017,7 @@ index 1c65ce87cde0..3b9f4e0de6e7 100644
 -- 
 2.54.0
 
-From 822d96110833580596485aba649e8bcb9dc918c1 Mon Sep 17 00:00:00 2001
+From 30ebae17013958d1cad1e86f4d94f93b825f22dd Mon Sep 17 00:00:00 2001
 From: gabrielstedman <gabrielstedman@users.noreply.github.com>
 Date: Fri, 13 Mar 2026 08:52:07 +0000
 Subject: [PATCH] media: ipu-bridge: Add front camera rotation quirks for
@@ -1034,10 +1034,10 @@ Patchset: cameras
  1 file changed, 14 insertions(+)
 
 diff --git a/drivers/media/pci/intel/ipu-bridge.c b/drivers/media/pci/intel/ipu-bridge.c
-index 15ed53c1e3fc..249b238e1694 100644
+index 9f3ac51bfc67..d5a364bba5b3 100644
 --- a/drivers/media/pci/intel/ipu-bridge.c
 +++ b/drivers/media/pci/intel/ipu-bridge.c
-@@ -122,6 +122,20 @@ static const struct dmi_system_id upside_down_sensor_dmi_ids[] = {
+@@ -136,6 +136,20 @@ static const struct dmi_system_id upside_down_sensor_dmi_ids[] = {
  		},
  		.driver_data = "OVTI02C1",
  	},

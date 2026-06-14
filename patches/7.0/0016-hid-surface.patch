@@ -1,4 +1,4 @@
-From 842c3878e8dafa6184acf9116f60d8a76ed33673 Mon Sep 17 00:00:00 2001
+From 7db00108fd0ece407eb072d29a30b6bc4070eeae Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Ciar=C3=A1n=20Coffey?= <github@ccoffey.ie>
 Date: Fri, 10 Oct 2025 19:04:03 +0100
 Subject: [PATCH] HID: Add hid-surface driver to filter BTN_0 (FN key)
@@ -156,7 +156,7 @@ index 000000000000..a171ea65672f
 -- 
 2.54.0
 
-From e315ebbc2ec8e30ec0bca56fa182f02547767c61 Mon Sep 17 00:00:00 2001
+From 09145dda9860d609d203410059d2912ce72431c9 Mon Sep 17 00:00:00 2001
 From: LegendaryFire <tristan.balon@outlook.com>
 Date: Fri, 13 Mar 2026 10:16:37 +0100
 Subject: [PATCH] hid/multitouch: Prevent mode set on Surface Laptop Studio 2
@@ -171,7 +171,7 @@ Patchset: hid-surface
  1 file changed, 31 insertions(+)
 
 diff --git a/drivers/hid/hid-multitouch.c b/drivers/hid/hid-multitouch.c
-index 8651e7b3dae6..1947e0923b68 100644
+index e05730ecded2..a42dab2535a3 100644
 --- a/drivers/hid/hid-multitouch.c
 +++ b/drivers/hid/hid-multitouch.c
 @@ -84,6 +84,7 @@ MODULE_LICENSE("GPL");
