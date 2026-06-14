@@ -1,4 +1,4 @@
-From 62fb1bd0f00e9449d8c32575c5957138156b1b02 Mon Sep 17 00:00:00 2001
+From 8a343cf12e18e847fcdb095d9c050cf68378d34d Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sat, 18 Feb 2023 01:02:49 +0100
 Subject: [PATCH] USB: quirks: Add USB_QUIRK_DELAY_INIT for Surface Go 3
@@ -23,7 +23,7 @@ Patchset: surface-typecover
  1 file changed, 3 insertions(+)
 
 diff --git a/drivers/usb/core/quirks.c b/drivers/usb/core/quirks.c
-index 34b1f7df3529..6fe00d310f5d 100644
+index 21f9b7fec8cb..39e0f5689c21 100644
 --- a/drivers/usb/core/quirks.c
 +++ b/drivers/usb/core/quirks.c
 @@ -229,6 +229,9 @@ static const struct usb_device_id usb_quirk_list[] = {
@@ -39,7 +39,7 @@ index 34b1f7df3529..6fe00d310f5d 100644
 -- 
 2.54.0
 
-From ed4546cd417328e57aa7dfef059b187dba3399e5 Mon Sep 17 00:00:00 2001
+From e16eddad3a9fbb03cf9d114e33472fdce39cc0f7 Mon Sep 17 00:00:00 2001
 From: =?UTF-8?q?Jonas=20Dre=C3=9Fler?= <verdre@v0yd.nl>
 Date: Thu, 5 Nov 2020 13:09:45 +0100
 Subject: [PATCH] hid/multitouch: Turn off Type Cover keyboard backlight when
@@ -75,7 +75,7 @@ Patchset: surface-typecover
  1 file changed, 98 insertions(+), 2 deletions(-)
 
 diff --git a/drivers/hid/hid-multitouch.c b/drivers/hid/hid-multitouch.c
-index 21bfaf9bbd73..0e1e191e18c1 100644
+index a543d4822107..ca9b6c06a53b 100644
 --- a/drivers/hid/hid-multitouch.c
 +++ b/drivers/hid/hid-multitouch.c
 @@ -35,7 +35,10 @@
@@ -274,7 +274,7 @@ index 21bfaf9bbd73..0e1e191e18c1 100644
 -- 
 2.54.0
 
-From 8039120c5b149110942bab61402cfda57ee9ad28 Mon Sep 17 00:00:00 2001
+From 455b650a868670acce9b10f4ad005b8f75b7443d Mon Sep 17 00:00:00 2001
 From: PJungkamp <p.jungkamp@gmail.com>
 Date: Fri, 25 Feb 2022 12:04:25 +0100
 Subject: [PATCH] hid/multitouch: Add support for surface pro type cover tablet
@@ -303,7 +303,7 @@ Patchset: surface-typecover
  1 file changed, 122 insertions(+), 26 deletions(-)
 
 diff --git a/drivers/hid/hid-multitouch.c b/drivers/hid/hid-multitouch.c
-index 0e1e191e18c1..cab90b5c3133 100644
+index ca9b6c06a53b..ecba482b7269 100644
 --- a/drivers/hid/hid-multitouch.c
 +++ b/drivers/hid/hid-multitouch.c
 @@ -83,6 +83,7 @@ MODULE_LICENSE("GPL");

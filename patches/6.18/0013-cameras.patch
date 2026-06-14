@@ -1,4 +1,4 @@
-From bd50ed02d6d4debd19fff13eb583379f79150f21 Mon Sep 17 00:00:00 2001
+From d954960357171ccfaef8db036b0d9c15ddbfe345 Mon Sep 17 00:00:00 2001
 From: Hans de Goede <hdegoede@redhat.com>
 Date: Sun, 10 Oct 2021 20:56:57 +0200
 Subject: [PATCH] ACPI: delay enumeration of devices with a _DEP pointing to an
@@ -58,7 +58,7 @@ Patchset: cameras
  1 file changed, 3 insertions(+)
 
 diff --git a/drivers/acpi/scan.c b/drivers/acpi/scan.c
-index ef16d58b2949..a6bad2679a0c 100644
+index 50f60da6cf27..06f85cd56117 100644
 --- a/drivers/acpi/scan.c
 +++ b/drivers/acpi/scan.c
 @@ -2205,6 +2205,9 @@ static acpi_status acpi_bus_check_add_2(acpi_handle handle, u32 lvl_not_used,
@@ -74,7 +74,7 @@ index ef16d58b2949..a6bad2679a0c 100644
 -- 
 2.54.0
 
-From 75123f8d29c4eb0de7b7cfed2b6fe21ae43dcc50 Mon Sep 17 00:00:00 2001
+From 5ecf756d9aa56ea1a21a1c86ae4cb7481dc709ce Mon Sep 17 00:00:00 2001
 From: zouxiaoh <xiaohong.zou@intel.com>
 Date: Fri, 25 Jun 2021 08:52:59 +0800
 Subject: [PATCH] iommu: intel-ipu: use IOMMU passthrough mode for Intel IPUs
@@ -100,7 +100,7 @@ Patchset: cameras
  1 file changed, 30 insertions(+)
 
 diff --git a/drivers/iommu/intel/iommu.c b/drivers/iommu/intel/iommu.c
-index a3e35c77da90..28567ba59de4 100644
+index 133a89b819ac..90b28ae0e710 100644
 --- a/drivers/iommu/intel/iommu.c
 +++ b/drivers/iommu/intel/iommu.c
 @@ -44,6 +44,13 @@
@@ -152,7 +152,7 @@ index a3e35c77da90..28567ba59de4 100644
  	if (!dmar_map_ipts)
  		iommu_identity_mapping |= IDENTMAP_IPTS;
  
-@@ -4530,6 +4545,18 @@ static void quirk_iommu_igfx(struct pci_dev *dev)
+@@ -4531,6 +4546,18 @@ static void quirk_iommu_igfx(struct pci_dev *dev)
  	disable_igfx_iommu = 1;
  }
  
@@ -171,7 +171,7 @@ index a3e35c77da90..28567ba59de4 100644
  static void quirk_iommu_ipts(struct pci_dev *dev)
  {
  	if (!IS_IPTS(dev))
-@@ -4580,6 +4607,9 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x1632, quirk_iommu_igfx);
+@@ -4584,6 +4611,9 @@ DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x1632, quirk_iommu_igfx);
  DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x163A, quirk_iommu_igfx);
  DECLARE_PCI_FIXUP_HEADER(PCI_VENDOR_ID_INTEL, 0x163D, quirk_iommu_igfx);
  
@@ -184,7 +184,7 @@ index a3e35c77da90..28567ba59de4 100644
 -- 
 2.54.0
 
-From fcd2d7891641f2412f093158e660c265343640dd Mon Sep 17 00:00:00 2001
+From ab87b8c72860a3a1bc2a3d54ef14e792db34667b Mon Sep 17 00:00:00 2001
 From: Daniel Scally <djrscally@gmail.com>
 Date: Sun, 10 Oct 2021 20:57:02 +0200
 Subject: [PATCH] platform/x86: int3472: Enable I2c daisy chain
@@ -221,7 +221,7 @@ index 0133405697dc..9e0763bdc758 100644
 -- 
 2.54.0
 
-From 5d63f486256dea7b98b88b8a5abae238c0a6fa23 Mon Sep 17 00:00:00 2001
+From 09786e4fd877b3ffb9d93a6c36f63705d6b81e77 Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Tue, 21 Mar 2023 13:45:26 +0000
 Subject: [PATCH] media: i2c: Clarify that gain is Analogue gain in OV7251
@@ -260,7 +260,7 @@ index 27afc3fc0175..28b192c9a5ec 100644
 -- 
 2.54.0
 
-From e9cd57228bb27589e9d0dafa68c9011ae1d011b0 Mon Sep 17 00:00:00 2001
+From 1a1b6ab214092025a8a2eae2dcd8336cfda50217 Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Wed, 22 Mar 2023 11:01:42 +0000
 Subject: [PATCH] media: v4l2-core: Acquire privacy led in
@@ -311,7 +311,7 @@ index cb153ce42c45..f11b499e14bb 100644
 -- 
 2.54.0
 
-From e4b39cc237941ae5418bb2d7e7c2b3888e414ec1 Mon Sep 17 00:00:00 2001
+From 4ee3f996e676fed9e2d1468aad9bc0bad935c09b Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:16 +0800
 Subject: [PATCH] platform: x86: int3472: Add MFD cell for tps68470 LED
@@ -352,7 +352,7 @@ index 9e0763bdc758..0976b267972b 100644
 -- 
 2.54.0
 
-From 7138240d6c3aa6de31d8c84cdf76b5c518ff7881 Mon Sep 17 00:00:00 2001
+From cdb33fa3f40cb61d800dfd48f8b78d41e6916942 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:17 +0800
 Subject: [PATCH] include: mfd: tps68470: Add masks for LEDA and LEDB
@@ -393,7 +393,7 @@ index 7807fa329db0..2d2abb25b944 100644
 -- 
 2.54.0
 
-From 3637ec94f234e16a8b374ecc47147359b8232d65 Mon Sep 17 00:00:00 2001
+From 7b4e62c8e90a1eeda5cc3e64f96948b0b682dd93 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:18 +0800
 Subject: [PATCH] leds: tps68470: Add LED control for tps68470
@@ -644,7 +644,7 @@ index 000000000000..35aeb5db89c8
 -- 
 2.54.0
 
-From a8e1ab2a4f38d81370a4bdf3d8dcb5cdb8f702f9 Mon Sep 17 00:00:00 2001
+From dcfc20c9562d3891ed8c83bcbdedeee21fc16f90 Mon Sep 17 00:00:00 2001
 From: mojyack <mojyack@gmail.com>
 Date: Tue, 26 Mar 2024 05:55:44 +0900
 Subject: [PATCH] media: i2c: dw9719: fix probe error on surface go 2
@@ -676,7 +676,7 @@ index 032fbcb981f2..e03a1d8cdcb4 100644
 -- 
 2.54.0
 
-From e1deec1f603a5c81eb5e08e0408596cffa9c77d9 Mon Sep 17 00:00:00 2001
+From 95ae5ec5028232f63f6fb35b4644e54e4d7b06b6 Mon Sep 17 00:00:00 2001
 From: Tooraj Taraz <tooraj.taraz@yahoo.com>
 Date: Wed, 31 Dec 2025 00:35:50 +0100
 Subject: [PATCH] Add camera support for Surface Pro 9
@@ -1017,7 +1017,7 @@ index 1505fc3ef7a8..20962e8acb26 100644
 -- 
 2.54.0
 
-From ed16c5ae071164fa71cc13dd3a331afb1dabbf85 Mon Sep 17 00:00:00 2001
+From aa6c9384d1b2b2ad4bff20c2e9d59f86c9cd9a68 Mon Sep 17 00:00:00 2001
 From: gabrielstedman <gabrielstedman@users.noreply.github.com>
 Date: Fri, 13 Mar 2026 08:52:07 +0000
 Subject: [PATCH] media: ipu-bridge: Add front camera rotation quirks for

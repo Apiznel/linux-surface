@@ -1,4 +1,4 @@
-From f7eca749a759bd465e444766026da7424b62d94e Mon Sep 17 00:00:00 2001
+From 2d0c312f5d106ebaad7414ee805f795a7e6af41b Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sun, 9 Jun 2024 19:48:58 +0200
 Subject: [PATCH] Revert "efi/x86: Set the PE/COFF header's NX compat flag
@@ -35,7 +35,7 @@ index 9bea5a1e2c52..25848f886ad6 100644
 -- 
 2.54.0
 
-From e7545beead7d60f71d998bbaafc7f1b5a61ddb1e Mon Sep 17 00:00:00 2001
+From dd23989e2867543ae6982403fdb6d46863bfdab5 Mon Sep 17 00:00:00 2001
 From: "J. Eduardo" <j.eduardo@gmail.com>
 Date: Sun, 25 Aug 2024 14:17:45 +0200
 Subject: [PATCH] PM: hibernate: Add a lockdown_hibernate parameter
