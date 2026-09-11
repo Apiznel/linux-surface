@@ -1,4 +1,4 @@
-From be20129a1400a402153fed5a60aa547751b44cec Mon Sep 17 00:00:00 2001
+From 384d3b5f43984e9fa2a005394a0b0fcb66cece1b Mon Sep 17 00:00:00 2001
 From: Hans de Goede <hdegoede@redhat.com>
 Date: Sun, 10 Oct 2021 20:56:57 +0200
 Subject: [PATCH] ACPI: delay enumeration of devices with a _DEP pointing to an
@@ -74,7 +74,7 @@ index 9a7ac2eb9ce0..46c415b3a955 100644
 -- 
 2.55.0
 
-From 3e8d078ea16792237cc332f8cd44d22aeccae27e Mon Sep 17 00:00:00 2001
+From fe1dfa24c01e702afe742bc94341476f503fac22 Mon Sep 17 00:00:00 2001
 From: zouxiaoh <xiaohong.zou@intel.com>
 Date: Fri, 25 Jun 2021 08:52:59 +0800
 Subject: [PATCH] iommu: intel-ipu: use IOMMU passthrough mode for Intel IPUs
@@ -100,7 +100,7 @@ Patchset: cameras
  1 file changed, 30 insertions(+)
 
 diff --git a/drivers/iommu/intel/iommu.c b/drivers/iommu/intel/iommu.c
-index 7914399d4d39..31f1bd75a77a 100644
+index d945d9b71007..c8f1a641db5b 100644
 --- a/drivers/iommu/intel/iommu.c
 +++ b/drivers/iommu/intel/iommu.c
 @@ -44,6 +44,13 @@
@@ -184,7 +184,7 @@ index 7914399d4d39..31f1bd75a77a 100644
 -- 
 2.55.0
 
-From 7d415563796938321b1493854b68cc0be92abbc8 Mon Sep 17 00:00:00 2001
+From 54d242667a46464d4fe20b9e8a1d6a68b74f0aff Mon Sep 17 00:00:00 2001
 From: Daniel Scally <djrscally@gmail.com>
 Date: Sun, 10 Oct 2021 20:57:02 +0200
 Subject: [PATCH] platform/x86: int3472: Enable I2c daisy chain
@@ -221,7 +221,7 @@ index a77ed32abe55..3ef46bace187 100644
 -- 
 2.55.0
 
-From b6e3e770f74f77d6f2f7fd56d830da83967c7188 Mon Sep 17 00:00:00 2001
+From 044514227b9501085d4c1ceff1e6cfea662aaea1 Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Tue, 21 Mar 2023 13:45:26 +0000
 Subject: [PATCH] media: i2c: Clarify that gain is Analogue gain in OV7251
@@ -260,7 +260,7 @@ index 311c61d9e25d..a1a91b41eb4d 100644
 -- 
 2.55.0
 
-From ff4339bae5c94382f55c838ba217c01baeda719b Mon Sep 17 00:00:00 2001
+From 7f4cda80c1a082ef43c7a7216b985c3c24090034 Mon Sep 17 00:00:00 2001
 From: Daniel Scally <dan.scally@ideasonboard.com>
 Date: Wed, 22 Mar 2023 11:01:42 +0000
 Subject: [PATCH] media: v4l2-core: Acquire privacy led in
@@ -311,7 +311,7 @@ index 62a3a452f788..349aebb77f2e 100644
 -- 
 2.55.0
 
-From 5b5f3a48f88129ea42f2e4df52323527e3f2807b Mon Sep 17 00:00:00 2001
+From 49f69da77b34366f29a81fe26cabe70edb0d0cc1 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:16 +0800
 Subject: [PATCH] platform: x86: int3472: Add MFD cell for tps68470 LED
@@ -354,7 +354,7 @@ index 3ef46bace187..e9b3a8a561a1 100644
 -- 
 2.55.0
 
-From 1167273389f331093930a5d8c5d1f7945dde2f70 Mon Sep 17 00:00:00 2001
+From 37d40a61239d4bb16b3cc4bd06cf4594bb3fe16d Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:17 +0800
 Subject: [PATCH] include: mfd: tps68470: Add masks for LEDA and LEDB
@@ -395,7 +395,7 @@ index 7807fa329db0..2d2abb25b944 100644
 -- 
 2.55.0
 
-From 83e731d824fe40258f1760990117854e837b313e Mon Sep 17 00:00:00 2001
+From 08d3d859fd98b637fc77a70acb2c61b993bcaa11 Mon Sep 17 00:00:00 2001
 From: Kate Hsuan <hpa@redhat.com>
 Date: Tue, 21 Mar 2023 23:37:18 +0800
 Subject: [PATCH] leds: tps68470: Add LED control for tps68470
@@ -646,7 +646,7 @@ index 000000000000..35aeb5db89c8
 -- 
 2.55.0
 
-From e5c054b09a21829865c5fff3e223cfcfa5e6bbc6 Mon Sep 17 00:00:00 2001
+From ddc5008b220b393c76037626dcb85a6aa2f52e06 Mon Sep 17 00:00:00 2001
 From: mojyack <mojyack@gmail.com>
 Date: Tue, 26 Mar 2024 05:55:44 +0900
 Subject: [PATCH] media: i2c: dw9719: fix probe error on surface go 2
@@ -678,7 +678,7 @@ index 3b7ba88fd67c..440888507802 100644
 -- 
 2.55.0
 
-From 24ab81d2e29f06f1e4f4f26fbc03effe76db8ffe Mon Sep 17 00:00:00 2001
+From c1bfed1db882434d77e9ee0b08c9a738c475db6b Mon Sep 17 00:00:00 2001
 From: Tooraj Taraz <tooraj.taraz@yahoo.com>
 Date: Wed, 31 Dec 2025 00:35:50 +0100
 Subject: [PATCH] Add camera support for Surface Pro 9
@@ -1019,7 +1019,7 @@ index 115bb37577a1..b2a54733df20 100644
 -- 
 2.55.0
 
-From 36a2bafad8b52ef88e0deaf569ebd26b5ae954d3 Mon Sep 17 00:00:00 2001
+From 1fd7565ac61304213c043a367c1c7eac0ae46148 Mon Sep 17 00:00:00 2001
 From: gabrielstedman <gabrielstedman@users.noreply.github.com>
 Date: Fri, 13 Mar 2026 08:52:07 +0000
 Subject: [PATCH] media: ipu-bridge: Add front camera rotation quirks for

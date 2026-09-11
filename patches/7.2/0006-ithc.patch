@@ -1,4 +1,4 @@
-From 0aad3e304615cdaf658f1d55cb633cff101c3c8c Mon Sep 17 00:00:00 2001
+From 3e633f6f1ba0bb50c5cf3b9f0c117f68b408fb31 Mon Sep 17 00:00:00 2001
 From: Dorian Stoll <dorian.stoll@tmsp.io>
 Date: Sun, 11 Dec 2022 12:03:38 +0100
 Subject: [PATCH] iommu: intel: Disable source id verification for ITHC
@@ -39,7 +39,7 @@ index 25c26f706984..772bb0d8e588 100644
 -- 
 2.55.0
 
-From f08f4efe583b738c32e3bb263982b4814a0388eb Mon Sep 17 00:00:00 2001
+From f5f24b0c63386494e8123efcbffc9b3643409041 Mon Sep 17 00:00:00 2001
 From: quo <tuple@list.ru>
 Date: Sun, 11 Dec 2022 12:10:54 +0100
 Subject: [PATCH] hid: Add support for Intel Touch Host Controller
@@ -86,10 +86,10 @@ Patchset: ithc
  create mode 100644 drivers/hid/ithc/ithc.h
 
 diff --git a/drivers/hid/Kconfig b/drivers/hid/Kconfig
-index ec9a62f9212d..a33d15703aa8 100644
+index 4a155d684561..4a19dbed14b6 100644
 --- a/drivers/hid/Kconfig
 +++ b/drivers/hid/Kconfig
-@@ -1490,6 +1490,8 @@ source "drivers/hid/intel-thc-hid/Kconfig"
+@@ -1491,6 +1491,8 @@ source "drivers/hid/intel-thc-hid/Kconfig"
  
  source "drivers/hid/ipts/Kconfig"
  

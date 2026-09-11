@@ -1,4 +1,4 @@
-From a927e0e7b806df43d7dbbce5951fceb0ab6b7cd4 Mon Sep 17 00:00:00 2001
+From 36278bfa4989e960c5ad96c17dccd9b3dd02d095 Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Fri, 17 Jun 2022 02:14:00 +0200
 Subject: [PATCH] rtc: Add basic support for RTC via Surface System Aggregator
@@ -181,7 +181,7 @@ index 000000000000..f6c17c4e98d5
 -- 
 2.55.0
 
-From a66fa65ee23922c37179dc18cd9dbbb9b4b5de89 Mon Sep 17 00:00:00 2001
+From cc8336e44b7896f64cf78f61681759df819ef7e1 Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sun, 20 Apr 2025 01:05:14 +0200
 Subject: [PATCH] platform/surface: aggregator_registry: Add Surface Laptop 7

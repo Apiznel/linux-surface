@@ -1,4 +1,4 @@
-From 948086d9f3f96d4d150fecdaf19057ea6add438e Mon Sep 17 00:00:00 2001
+From fcc14d5e04324d920ea430fc3c745770641ebb7c Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sat, 25 Jul 2020 17:19:53 +0200
 Subject: [PATCH] i2c: acpi: Implement RawBytes read access
@@ -109,7 +109,7 @@ index e5fddacae9a4..6336fca33d75 100644
 -- 
 2.55.0
 
-From d43601d0b98b2eb8cca00b52bccfd8997e35ce3a Mon Sep 17 00:00:00 2001
+From 13542cdb3aa9d41512f901c5286f1b413e97b52f Mon Sep 17 00:00:00 2001
 From: Maximilian Luz <luzmaximilian@gmail.com>
 Date: Sat, 13 Feb 2021 16:41:18 +0100
 Subject: [PATCH] platform/surface: Add driver for Surface Book 1 dGPU switch
