@@ -3,7 +3,7 @@
 # Maintainer: Jan Alexander Steffens (heftig) <jan.steffens@gmail.com>
 
 pkgbase=linux-surface
-pkgver=7.2.2.arch1
+pkgver=7.2.4.arch1
 pkgrel=1
 pkgdesc='Linux'
 _shortver=${pkgver%.*}
